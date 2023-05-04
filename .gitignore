@@ -10,3 +10,5 @@
 *.user
 /CMakeCache.txt
 *.fpr
+/.env
+*.mbs

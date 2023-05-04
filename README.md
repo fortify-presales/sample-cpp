@@ -38,3 +38,12 @@ Finally, view the results in AuditWorkbench:
 ```
 auditworkbench sample-cpp.fpr
 ```
+
+You can also use ScanCentral by first creating a mobile build solution (mbs) and then uploading it:
+
+```
+sourceanalyzer -b sample-cpp -export-build-session sample-cpp.mbs
+scancentral -url $ScanCentralCtrlUrl start -upload -uptoken $SSCAuthToken `
+    -b sample-cpp -application sample-cpp -version 1.0 -mbs sample-cpp.mbs `
+    -email $ScanCentralEmail -block -o -f sample-cpp.fpr
+```
